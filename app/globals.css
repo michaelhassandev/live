@@ -1,0 +1,134 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 142 72% 29%;
+    --primary-foreground: 0 0% 98%;
+
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+
+    --accent: 240 3.7% 15.9%;
+    --accent-foreground: 0 0% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 142 72% 29%;
+
+    --radius: 0.5rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Estilos personalizados para o tema musical */
+.music-card {
+  @apply bg-spotify-darkgray rounded-xl overflow-hidden transition-all duration-300 hover:bg-spotify-lightgray hover:shadow-lg;
+}
+
+.gradient-text {
+  @apply text-transparent bg-clip-text bg-gradient-to-r from-gradient-start via-gradient-mid to-gradient-end;
+}
+
+.gradient-bg {
+  @apply bg-gradient-to-r from-gradient-start via-gradient-mid to-gradient-end;
+}
+
+.glass-effect {
+  @apply bg-opacity-10 backdrop-filter backdrop-blur-lg bg-white border border-white border-opacity-20;
+}
+
+.hover-scale {
+  @apply transition-transform duration-300 hover:scale-105;
+}
+
+.sidebar-item {
+  @apply flex items-center gap-3 px-4 py-3 rounded-lg text-spotify-text hover:text-spotify-white hover:bg-spotify-lightgray transition-all duration-200;
+}
+
+.sidebar-item.active {
+  @apply bg-spotify-lightgray text-spotify-white;
+}
+
+.player-progress {
+  @apply h-1 bg-spotify-lightgray rounded-full overflow-hidden;
+}
+
+.player-progress-bar {
+  @apply h-full bg-spotify rounded-full transition-all duration-300;
+}
+
+.custom-scrollbar {
+  @apply overflow-auto;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  @apply w-2 h-2;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  @apply bg-spotify-gray;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  @apply bg-spotify-lightgray rounded-full;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  @apply bg-spotify-lightgray/80;
+}
+
+/* Animação de ondas de áudio */
+.audio-wave {
+  @apply flex items-end h-8 gap-[2px];
+}
+
+.audio-wave span {
+  @apply w-1 bg-spotify rounded-full animate-pulse-slow;
+}
+
+.audio-wave span:nth-child(1) {
+  height: 30%;
+  animation-delay: 0.2s;
+}
+.audio-wave span:nth-child(2) {
+  height: 60%;
+  animation-delay: 0.6s;
+}
+.audio-wave span:nth-child(3) {
+  height: 80%;
+  animation-delay: 0.1s;
+}
+.audio-wave span:nth-child(4) {
+  height: 40%;
+  animation-delay: 0.8s;
+}
+.audio-wave span:nth-child(5) {
+  height: 70%;
+  animation-delay: 0.4s;
+}
+
